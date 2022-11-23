@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { ChevronLeft } from "@mui/icons-material";
+import { ChevronLeft, Home } from "@mui/icons-material";
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -15,8 +15,12 @@ function App() {
         <div className="header-title">Header</div>
       </div>
       <div className="container">
-        <aside className={`${isOpen && "open"} drawer`}>Drawer</aside>
-        <main className="main">Content</main>
+        <aside className={`${isOpen && "open"} drawer`}>
+          <div className="nav-item"><Home /> {isOpen && " Home"}</div>
+        </aside>
+        <main className="main">
+          <div className="content">Content </div>
+        </main>
       </div>
       <div className="footer">Footer</div>
     </div>
